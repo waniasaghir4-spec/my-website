@@ -1,0 +1,126 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      fontFamily: {
+        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+        sans: ['DM Sans', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        blush: {
+          50: '#FEF5F7',
+          100: '#FDEAEE',
+          200: '#F9CCDA',
+          300: '#F4A8C0',
+          400: '#EE82A3',
+          500: '#E85E88',
+          600: '#D4426E',
+        },
+        rose: {
+          50: '#FDF0F2',
+          100: '#FAE0E5',
+          200: '#F3BDCA',
+          300: '#E99AAF',
+          400: '#DB7293',
+          500: '#C4506F',
+          600: '#A33558',
+        },
+        nude: {
+          50: '#FDFAF8',
+          100: '#FAF4F0',
+          200: '#F5E9E0',
+          300: '#EDD8CA',
+          400: '#E2C3AF',
+          500: '#D4AB93',
+          600: '#BF9070',
+        },
+        champagne: {
+          50: '#FEFAF4',
+          100: '#FCF4E7',
+          200: '#F9E8CE',
+          300: '#F3D5A8',
+          400: '#EABD7E',
+          500: '#DCA355',
+          600: '#C4872E',
+        },
+        gold: {
+          50: '#FEFBF0',
+          100: '#FDF5DC',
+          200: '#FAE9B3',
+          300: '#F5D876',
+          400: '#EEC23D',
+          500: '#C9A55A',
+          600: '#A8842D',
+          700: '#7D6020',
+        },
+        warm: {
+          50: '#FBF8F6',
+          100: '#F5EDE8',
+          200: '#EDD8CC',
+          300: '#E0BFAD',
+          400: '#CE9F88',
+          500: '#B87D60',
+          600: '#8C5A3F',
+          700: '#3D1C0F',
+          800: '#2A1209',
+          900: '#1A0B05',
+        },
+      },
+      animation: {
+        'fade-up': 'fadeUp 0.8s ease-out forwards',
+        'fade-in': 'fadeIn 0.8s ease-out forwards',
+        'float': 'float 6s ease-in-out infinite',
+        'float-slow': 'float 9s ease-in-out infinite',
+        'float-fast': 'float 4s ease-in-out infinite',
+        'shimmer': 'shimmer 3s linear infinite',
+        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+        'spin-slow': 'spin 20s linear infinite',
+        'gradient-shift': 'gradientShift 8s ease infinite',
+        'loading-bar': 'loadingBar 2s ease-out forwards',
+      },
+      keyframes: {
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% center' },
+          '100%': { backgroundPosition: '200% center' },
+        },
+        pulseSoft: {
+          '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
+          '50%': { opacity: '1', transform: 'scale(1.05)' },
+        },
+        gradientShift: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        loadingBar: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
+      boxShadow: {
+        'glass': '0 8px 32px rgba(196, 130, 142, 0.12), inset 0 1px 0 rgba(255,255,255,0.6)',
+        'glass-hover': '0 16px 48px rgba(196, 130, 142, 0.22), inset 0 1px 0 rgba(255,255,255,0.8)',
+        'gold': '0 4px 24px rgba(201, 165, 90, 0.25)',
+        'pink-glow': '0 8px 32px rgba(232, 160, 176, 0.4)',
+        'soft': '0 4px 20px rgba(60, 20, 20, 0.06)',
+        'soft-lg': '0 12px 40px rgba(60, 20, 20, 0.1)',
+      },
+    },
+  },
+  plugins: [],
+};

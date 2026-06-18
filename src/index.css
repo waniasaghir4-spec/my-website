@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background-color: #FDFAF8;
+    color: #2A1209;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #F4A8C0;
+    color: #2A1209;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #FAF4F0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #E99AAF;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C4506F;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(253, 245, 247, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(244, 168, 192, 0.25);
+    box-shadow: 0 8px 32px rgba(196, 130, 142, 0.12), inset 0 1px 0 rgba(255,255,255,0.6);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .glass-card:hover {
+    box-shadow: 0 16px 48px rgba(196, 130, 142, 0.22), inset 0 1px 0 rgba(255,255,255,0.8);
+    transform: translateY(-4px);
+    border-color: rgba(244, 168, 192, 0.45);
+  }
+
+  .gold-line {
+    background: linear-gradient(90deg, transparent, #C9A55A, transparent);
+    height: 1px;
+  }
+
+  .shimmer-text {
+    background: linear-gradient(120deg, #C9A55A 0%, #F5D876 30%, #C9A55A 50%, #E8BD7E 70%, #C9A55A 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #C4506F 0%, #E85E88 40%, #C9A55A 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-8 py-4 rounded-full font-sans font-medium tracking-wide text-sm transition-all duration-300;
+    background: linear-gradient(135deg, #C4506F 0%, #E85E88 100%);
+    color: white;
+    box-shadow: 0 6px 24px rgba(196, 80, 111, 0.35);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(196, 80, 111, 0.45);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-8 py-4 rounded-full font-sans font-medium tracking-wide text-sm transition-all duration-300;
+    background: transparent;
+    color: #C4506F;
+    border: 1.5px solid #C4506F;
+  }
+
+  .btn-outline:hover {
+    background: rgba(196, 80, 111, 0.06);
+    transform: translateY(-2px);
+    border-color: #E85E88;
+  }
+
+  .section-label {
+    @apply inline-block text-xs font-sans font-medium tracking-[0.25em] uppercase;
+    color: #C9A55A;
+  }
+
+  .section-title {
+    @apply font-serif font-light leading-tight;
+    color: #2A1209;
+  }
+
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-in-delay-1 { transition-delay: 0.1s; }
+  .fade-in-delay-2 { transition-delay: 0.2s; }
+  .fade-in-delay-3 { transition-delay: 0.3s; }
+  .fade-in-delay-4 { transition-delay: 0.4s; }
+  .fade-in-delay-5 { transition-delay: 0.5s; }
+  .fade-in-delay-6 { transition-delay: 0.6s; }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-gradient-blush {
+    background: linear-gradient(135deg, #FEF5F7 0%, #FAF4F0 50%, #FCF4E7 100%);
+  }
+
+  .bg-gradient-hero {
+    background: linear-gradient(160deg, #FEF5F7 0%, #FAF0EB 30%, #FDF5F0 60%, #FCF4E7 100%);
+  }
+
+  .decorative-blob {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: float 8s ease-in-out infinite;
+  }
+}
+
+/* Custom input styles */
+.form-input {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(253, 245, 247, 0.6);
+  border: 1.5px solid rgba(244, 168, 192, 0.4);
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: #2A1209;
+  transition: all 0.3s ease;
+  outline: none;
+  backdrop-filter: blur(8px);
+}
+
+.form-input:focus {
+  border-color: #E85E88;
+  background: rgba(253, 245, 247, 0.9);
+  box-shadow: 0 0 0 3px rgba(232, 94, 136, 0.1);
+}
+
+.form-input::placeholder {
+  color: #BF9070;
+  font-weight: 300;
+}
+
+/* Star sparkle */
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+.sparkle {
+  animation: sparkle 2.5s ease-in-out infinite;
+}
+
+.sparkle-delay-1 { animation-delay: 0.5s; }
+.sparkle-delay-2 { animation-delay: 1s; }
+.sparkle-delay-3 { animation-delay: 1.5s; }
+.sparkle-delay-4 { animation-delay: 2s; }
